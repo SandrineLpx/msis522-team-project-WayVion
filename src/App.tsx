@@ -7,6 +7,7 @@ import {
   ImageIcon,
   Layers3,
   Lightbulb,
+  ExternalLink,
   Link as LinkIcon,
   Network,
   Rocket,
@@ -49,11 +50,11 @@ export default function App() {
   return (
     <div className="page-shell">
       <div className="page-container">
-        <section className="hero surface hero-surface">
+        <section className="hero surface hero-surface hero-two-col">
           <div className="hero-copy">
             <div className="template-pill">
               <Sparkles size={14} />
-              Plug-and-Play Project Page
+              MSIS 522 Final Project
             </div>
             <h1>{projectData.title}</h1>
             <p className="owner-line">{projectData.ownerLine}</p>
@@ -83,6 +84,64 @@ export default function App() {
               ))}
             </div>
           </div>
+          <div className="hero-visual">
+            <img
+              src="/project-assets/roadmap-dashboard.png"
+              alt="WayVion roadmap dashboard showing module progression, streaks, and adapt controls"
+              className="hero-screenshot"
+            />
+          </div>
+        </section>
+
+        <section className="try-live-section">
+          <div className="try-live-header">
+            <div>
+              <p className="eyebrow">Interactive</p>
+              <h2>Try WayVion live</h2>
+            </div>
+            <a
+              href="https://pathfinderairoadmap.lovable.app"
+              target="_blank"
+              rel="noreferrer"
+              className="open-new-tab-link"
+            >
+              Open in new tab <ExternalLink size={16} />
+            </a>
+          </div>
+          <div className="browser-chrome">
+            <div className="browser-dots">
+              <span className="dot dot-red" />
+              <span className="dot dot-yellow" />
+              <span className="dot dot-green" />
+              <span className="browser-url">https://pathfinderairoadmap.lovable.app</span>
+            </div>
+            <iframe
+              src="https://pathfinderairoadmap.lovable.app"
+              title="WayVion Live App"
+              className="live-iframe"
+              loading="lazy"
+            />
+          </div>
+        </section>
+
+        <section>
+          <SectionHeader
+            eyebrow="Team"
+            title="Founding Team"
+            description=""
+          />
+          <div className="card-grid two-up">
+            {projectData.members.map((member) => (
+              <div key={`${member.name}-${member.role}`} className="surface padded-card team-card">
+                <div className="team-avatar">{member.name.replace(/[[\]]/g, '').split(' ').filter(Boolean).map((part) => part[0]).join('').slice(0, 2).toUpperCase() || 'TM'}</div>
+                <div>
+                  <h3>{member.name}</h3>
+                  <p className="team-role">{member.role}</p>
+                  <p className="body-copy compact">{member.focus}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="surface instructions-surface">
@@ -91,8 +150,8 @@ export default function App() {
               <FileText size={22} />
             </div>
             <div>
-              <p className="instruction-title">How students should use this page</p>
-              <p className="instruction-subtitle">Fill in the content, keep the overall layout and pacing.</p>
+              <p className="instruction-title">How to use WayVion</p>
+              <p className="instruction-subtitle">Generate a personalized learning roadmap in four steps.</p>
             </div>
           </div>
 
@@ -167,29 +226,9 @@ export default function App() {
 
         <section>
           <SectionHeader
-            eyebrow="Team"
-            title="Show who built it and what each person owned"
-            description="This section should read like a real team build, not just a list of names. Make ownership specific."
-          />
-          <div className="card-grid two-up">
-            {projectData.members.map((member) => (
-              <div key={`${member.name}-${member.role}`} className="surface padded-card team-card">
-                <div className="team-avatar">{member.name.replace(/[[\]]/g, '').split(' ').filter(Boolean).map((part) => part[0]).join('').slice(0, 2).toUpperCase() || 'TM'}</div>
-                <div>
-                  <h3>{member.name}</h3>
-                  <p className="team-role">{member.role}</p>
-                  <p className="body-copy compact">{member.focus}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <SectionHeader
             eyebrow="Gallery"
-            title="Add screenshots, diagrams, evidence, and visual proof"
-            description="Students can place screenshots, diagrams, PDFs, or photos inside public/project-assets and reference them from the data file."
+            title="Snapshots from WayVion Roadmap Creation, Adaptation and Usage"
+            description=""
           />
           <div className="card-grid two-up">
             {projectData.gallery.map((item) =>
@@ -269,6 +308,13 @@ export default function App() {
                 </div>
               ))}
             </div>
+            <div className="methods-flowchart">
+              <img
+                src="/project-assets/user-workflow-flowchart.png"
+                alt="User workflow: Create Roadmap, Complete Courses, Provide Feedback, AI Adapts Learning Path"
+                className="methods-flowchart-image"
+              />
+            </div>
           </div>
         </section>
 
@@ -276,11 +322,16 @@ export default function App() {
           <SectionHeader
             eyebrow="Product"
             title="Break the experience into feature cards"
-            description="Each card should explain what the user does, what the system does, and what concrete value the interaction creates."
+            description=""
           />
           <div className="card-grid two-up">
             {projectData.features.map((feature) => (
-              <div key={feature.title} className="surface padded-card">
+              <div key={feature.title} className="surface padded-card feature-card-with-image">
+                {feature.assetPath && (
+                  <div className="feature-image-wrap">
+                    <img src={feature.assetPath} alt={feature.title} className="feature-image" />
+                  </div>
+                )}
                 <div className="icon-box cyan-box">
                   <Rocket size={18} />
                 </div>
@@ -299,7 +350,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="two-col-grid">
+        <section>
           <div className="surface padded-card">
             <div className="card-heading">
               <div className="icon-box lab-box">
@@ -307,7 +358,7 @@ export default function App() {
               </div>
               <div>
                 <p className="eyebrow">Architecture</p>
-                <h3>Explain how the system works</h3>
+                <h3>How WayVion Works</h3>
               </div>
             </div>
             <div className="architecture-list">
@@ -321,82 +372,12 @@ export default function App() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="surface padded-card">
-            <div className="card-heading">
-              <div className="icon-box cyan-box">
-                <Code2 size={18} />
-              </div>
-              <div>
-                <p className="eyebrow">Code Highlights</p>
-                <h3>Paste short code samples if they help</h3>
-              </div>
-            </div>
-            <div className="code-list">
-              {projectData.codeHighlights.map((snippet) => (
-                <div key={snippet.title} className="code-card">
-                  <div className="code-card-top">
-                    <div>
-                      <h4>{snippet.title}</h4>
-                      <p>{snippet.note}</p>
-                    </div>
-                    <span className="language-pill">{snippet.language}</span>
-                  </div>
-                  <pre>
-                    <code>{snippet.code}</code>
-                  </pre>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="two-col-grid">
-          <div className="surface padded-card">
-            <div className="card-heading">
-              <div className="icon-box cyan-box">
-                <BarChart3 size={18} />
-              </div>
-              <div>
-                <p className="eyebrow">Roadmap</p>
-                <h3>Show momentum and next steps</h3>
-              </div>
-            </div>
-            <div className="roadmap-list">
-              {projectData.roadmap.map((phase) => (
-                <div key={phase.phase} className="roadmap-card">
-                  <p className="roadmap-phase">{phase.phase}</p>
-                  <div className="roadmap-items">
-                    {phase.items.map((item) => (
-                      <div key={item} className="bullet-item">
-                        <span />
-                        <p>{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="surface padded-card">
-            <div className="card-heading">
-              <div className="icon-box danger-box">
-                <ShieldCheck size={18} />
-              </div>
-              <div>
-                <p className="eyebrow">Risks</p>
-                <h3>Be honest about constraints</h3>
-              </div>
-            </div>
-            <div className="risk-list">
-              {projectData.risks.map((risk) => (
-                <div key={risk.title} className="risk-card">
-                  <h4>{risk.title}</h4>
-                  <p>{risk.mitigation}</p>
-                </div>
-              ))}
+            <div className="methods-flowchart">
+              <img
+                src="/project-assets/ai-agents-orchestra.png"
+                alt="The Orchestra: 4 Specialized AI Agents — Curriculum Architect, Resource Curator, Performance Evaluator, Quiz/Flashcard Gen"
+                className="methods-flowchart-image"
+              />
             </div>
           </div>
         </section>

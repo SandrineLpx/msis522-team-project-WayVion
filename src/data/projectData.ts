@@ -33,6 +33,7 @@ export interface FeatureCard {
   title: string;
   description: string;
   highlights: string[];
+  assetPath?: string;
 }
 
 export interface ArchitectureItem {
@@ -84,170 +85,301 @@ export interface ProjectPageData {
   risks: RiskItem[];
 }
 
-// Students: this is the main file you should edit.
-// Replace every bracketed placeholder with real content.
-// Put screenshots, PDFs, and diagrams in public/project-assets/.
-// In most cases, you do not need to edit App.tsx or styles.css.
-
 export const projectData: ProjectPageData = {
-  // This slug is useful later if the project is imported back into foster-ai-hub.
-  slug: '[project-slug]',
+  slug: 'wayvion',
 
-  // Basic page identity
-  title: '[Project Title]',
-  subtitle: '[One sharp sentence that explains what your team is building and for whom.]',
-  ownerLine: '[Team Name or Student Names]',
+  title: 'WayVion',
+  subtitle:
+    'An AI-powered learning platform that generates personalized roadmaps, curates real resources, and adapts in real time to how you learn.',
+  ownerLine: 'Swati Choudhury, Sandrine Lepesqueux, Nicholas Ray German, Nathan Fitzgerald',
   executiveSummary:
-    '[Write a crisp executive summary here. Explain the business context, the user, the core workflow, and why this project matters in one paragraph.]',
+    'Most online learning starts with search, not structure. Learners jump between videos, articles, and AI answers without knowing what comes first, what fits their level, or what to do next. WayVion solves this by generating a personalized learning roadmap based on your topic, skill level, learning goal, and available time. Four specialized AI agents orchestrate the experience: one designs the curriculum, one curates real resources from across the web, one evaluates your performance after each module, and one generates on-demand quizzes. The platform adapts your roadmap in real time when you struggle or accelerate, and supports community-based learning through groups, sharing, and progress dashboards.',
 
-  // Short instruction cards shown near the top of the page
   instructions: [
-    'Replace every bracketed placeholder with project-specific content.',
-    'Drop screenshots, PDFs, diagrams, or photos into public/project-assets and reference them here.',
-    'Add or remove cards by editing arrays in this file instead of rewriting the page layout.',
-    'Keep the executive summary concise, but make the stack, methods, feature cards, and architecture specific and concrete.',
+    'Enter any topic, select your skill level, learning goal, and available time to generate a personalized roadmap.',
+    'Work through modules sequentially — each contains curated resources, learning objectives, and an on-demand quiz.',
+    'After completing a module, rate its difficulty and take the quiz. The AI evaluates your performance and adapts the roadmap if needed.',
+    'Share roadmaps with connections, join study groups or classrooms, and track progress with your team.',
   ],
 
-  // Main action buttons / links
   links: [
-    { label: 'Live Tool', url: 'https://example.com', primary: true },
-    { label: 'Demo Recording', url: 'https://example.com/demo' },
-    { label: 'GitHub Repo', url: 'https://github.com/your-team/your-project' },
+    { label: 'Live App', url: 'https://pathfinderairoadmap.lovable.app', primary: true },
+    { label: 'GitHub Repo', url: 'https://github.com/swatt145-png/pathfinder-ai-roadmap' },
     { label: 'Slides PDF', url: '/project-assets/final-slides.pdf' },
-    { label: 'Technical Report', url: '/project-assets/report.pdf' },
+    { label: 'Technical Report', url: '/project-assets/report.docx' },
   ],
 
-  // Quick tags shown under the summary
-  badges: ['[React]', '[TypeScript]', '[Supabase]', '[OpenAI API]', '[Figma]', '[n8n / LangGraph / MCP]'],
+  badges: ['React', 'TypeScript', 'Supabase', 'Gemini API', 'Serper API', 'YouTube Data API', 'Tailwind CSS', 'Vite', 'Deno Edge Functions'],
 
-  // Short keywords that help when this project is added to a larger gallery later.
-  keywords: ['[keyword-1]', '[keyword-2]', '[keyword-3]'],
+  keywords: ['adaptive-learning', 'ai-agents', 'personalized-education', 'multi-agent-orchestration', 'edtech'],
 
-  // Methods shown in the solution section and methods section
-  methods: ['[Prompt chaining]', '[RAG]', '[Human-in-the-loop review]', '[Rapid prototyping]'],
+  methods: [
+    'Multi-agent orchestration',
+    'Two-phase async generation',
+    '10-stage resource curation pipeline',
+    'Performance-driven adaptation',
+    'On-demand quiz generation',
+  ],
 
-  // Small summary cards near the top
   metrics: [
-    { label: 'Team', value: '[3-5 students]', note: 'List names and roles below' },
-    { label: 'Core User', value: '[User Segment]', note: 'Who the experience is designed for' },
+    { label: 'Core Users', value: 'Individuals & Teams', note: 'Students, corporate teams, universities (professors and students), and self-directed learners — for both individual and group usage' },
   ],
 
-  // Problem / solution
   problemStatement:
-    '[Describe the pain point in concrete terms. Who experiences it, how often, what it costs them, and why current solutions fall short.]',
+    'Most online learning starts with search, not structure. Learners jump between videos, articles, and AI answers without knowing what comes first, what fits their level, or what to do next. There is no clear learning path — too many resources with no sequence and no roadmap. Wrong-level content wastes time — beginners get overwhelmed while advanced learners get stuck with basics. AI tools like ChatGPT give answers but not guidance — generic recommendations rarely adapt, progression seems arbitrary, and there is no follow-through.',
   solutionSummary:
-    '[Describe the product or system your team is building. Explain the main interaction, the AI or automation role, and the value users get from it.]',
-  audience: '[Primary users, buyers, or stakeholders]',
-  impactGoal: '[What outcome will improve if this succeeds? Revenue, speed, trust, accuracy, retention, access, etc.]',
-  status: '[Prototype / Pilot / Live Tool / Research Concept]',
+    'WayVion generates a personalized learning roadmap based on your topic, skill level, time available, and learning goal. It does not return a list of links — it builds a structured path with sequenced modules, curates real resources from across the web scored for quality and relevance, and adapts the plan when your performance or schedule changes. Four AI agents handle curriculum design, resource discovery, performance evaluation, and quiz generation, working together through a multi-agent orchestration layer.',
+  audience: 'Self-directed learners, students, educators, and team managers',
+  impactGoal: 'Reduce time-to-competency by replacing unstructured search with adaptive, AI-guided learning paths',
+  status: 'Live Tool',
 
-  // Team members
   members: [
-    { name: '[Student Name]', role: '[Role or Function]', focus: '[What this person owned]' },
-    { name: '[Student Name]', role: '[Role or Function]', focus: '[What this person owned]' },
-    { name: '[Student Name]', role: '[Role or Function]', focus: '[What this person owned]' },
+    { name: 'Swati Choudhury', role: 'Founder & CEO', focus: 'Built the company from the ground up, owns the vision behind it, and leads all strategic decisions and overall growth.' },
+    { name: 'Sandrine Lepesqueux', role: 'Chief Operating Officer', focus: 'Oversees day-to-day operations and makes sure the company runs efficiently.' },
+    { name: 'Nicholas Ray German', role: 'Chief Financial Officer', focus: 'Manages the company\'s finances, budgeting, forecasting, and financial risk.' },
+    { name: 'Nathan Fitzgerald', role: 'Chief Marketing Officer', focus: 'Leads the marketing strategy, brand positioning, and customer acquisition efforts.' },
   ],
 
-  // Gallery cards
-  // To use a real image, put the file in public/project-assets/ and set assetPath.
   gallery: [
     {
-      title: 'Hero Screenshot',
-      caption: '[Show the main interface or most impressive moment of the product.]',
-      assetPath: '/project-assets/example-screen.png',
+      title: 'Landing Page',
+      caption: 'WayVion\'s landing page introduces the platform\'s four key value propositions: personalized roadmaps, real resources, adaptive learning, and AI-powered insights.',
+      assetPath: '/project-assets/landing-page.png',
     },
     {
-      title: 'Workflow or Architecture',
-      caption: '[Show how the system works behind the scenes.]',
-      placeholder: 'Add a system diagram, workflow slide, or whiteboard export',
+      title: 'Roadmap Generation',
+      caption: 'Users enter a topic, select their learning goal (Conceptual, Practice, Quick Overview, Deep Mastery), skill level, and timeline to generate a personalized roadmap.',
+      assetPath: '/project-assets/generate-roadmap.png',
     },
     {
-      title: 'Evidence of Validation',
-      caption: '[Include user testing photos, before/after comparisons, sample outputs, or evaluation charts.]',
-      placeholder: 'Add proof that the idea works or is promising',
+      title: 'Performance Check-In',
+      caption: 'After completing a module, the AI analyzes self-reported difficulty and quiz scores to determine if the roadmap needs adaptation.',
+      assetPath: '/project-assets/checkin-agent.png',
+    },
+    {
+      title: 'Module Detail View',
+      caption: 'Each module displays curated resources, learning objectives, and progress tracking for structured learning.',
+      assetPath: '/project-assets/module-detail.png',
+    },
+    {
+      title: 'Roadmap Dashboard',
+      caption: 'A full roadmap view showing module sequence, progress stats, time tracking, and actions like Adapt Plan, Share, and Archive.',
+      assetPath: '/project-assets/ai-roadmap-full.png',
+    },
+    {
+      title: 'Landing Page Features',
+      caption: 'How WayVion builds your learning path — showcasing the agent workflow and key value propositions like tailored goals, proficiency levels, and timeline customization.',
+      assetPath: '/project-assets/landing-page-features.png',
+    },
+    {
+      title: 'Module Self-Report',
+      caption: 'After completing a module, learners rate difficulty (Easy, Medium, Hard), write notes, and generate a quiz — feeding the adaptive learning engine.',
+      assetPath: '/project-assets/module-self-report.png',
+    },
+    {
+      title: 'My Roadmaps',
+      caption: 'The My Roadmaps page lets users manage all their active, shared, and archived roadmaps in one place.',
+      assetPath: '/project-assets/my-roadmaps.png',
+    },
+    {
+      title: 'Parallel Agent Scoring',
+      caption: 'The Resource Curator runs parallel AI scoring instances — one per module — before collecting results for span negotiation and coverage repair.',
+      assetPath: '/project-assets/parallel-agents-flowchart.png',
+    },
+    {
+      title: '10-Stage Resource Pipeline',
+      caption: 'The full resource curation pipeline: from context extraction and search query generation through Serper/YouTube APIs, authority scoring, AI review, and final diversity constraints.',
+      assetPath: '/project-assets/resource-pipeline-flowchart.png',
     },
   ],
 
-  // Technical stack
   stack: [
     {
-      category: 'Frontend and Experience',
-      tools: ['[React]', '[Next.js / Vite]', '[Tailwind CSS or CSS]', '[Figma]'],
-      note: '[How you designed and shipped the interface.]',
+      category: 'Frontend',
+      tools: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Shadcn/ui (Radix)', 'React Query', 'React Hook Form', 'Recharts'],
+      note: 'Single-page app with real-time polling for async resource population. Shadcn/ui provides 25+ accessible components. Recharts powers progress dashboards.',
     },
     {
-      category: 'AI, Logic, and Orchestration',
-      tools: ['[OpenAI API]', '[LangGraph / n8n / custom workflow]', '[Prompt patterns]', '[Evaluation setup]'],
-      note: '[How intelligence, prompting, and agentic behavior work.]',
+      category: 'AI and Agent Orchestration',
+      tools: ['Gemini 3-Pro', 'Gemini 2.5 Flash', 'Gemini 2.5 Flash-Lite', 'Lovable AI Gateway', 'Serper API', 'YouTube Data API v3'],
+      note: 'Four specialized agents deployed as Supabase Edge Functions. Gemini Pro handles curriculum design (pedagogical reasoning), Flash handles resource scoring and adaptation, Flash-Lite handles quiz generation for speed. Serper and YouTube APIs supply real-time resource discovery.',
     },
     {
-      category: 'Data, Backend, and Integrations',
-      tools: ['[Supabase / Firebase / Postgres]', '[APIs]', '[Auth]', '[Storage]'],
-      note: '[Where data lives and what external systems connect.]',
+      category: 'Backend, Data, and Auth',
+      tools: ['Supabase', 'PostgreSQL', 'Deno Edge Functions', 'Row-Level Security', 'Supabase Auth'],
+      note: '10+ database tables with RLS policies. Edge Functions run on Deno runtime. Auth supports email/password and guest accounts. Points calculated via Postgres function.',
     },
   ],
 
-  // Feature cards
   features: [
     {
-      title: '[Feature or Flow Name]',
-      description: '[Explain what this part of the experience does and why it matters.]',
-      highlights: ['[Key interaction]', '[AI behavior]', '[What makes it different]'],
+      title: 'Personalized Curriculum with Curated Resources',
+      assetPath: '/project-assets/module-detail.png',
+      description:
+        'The Curriculum Architect agent designs a module structure and learning sequence based on your topic, skill level, learning goal, and available time. The Resource Curator agent then runs a 10-stage pipeline across the web — using Serper search and YouTube API — to score resources for quality, difficulty, and fit.',
+      highlights: [
+        'Module count dynamically calculated from total hours and time budget enforcement (85% usable time)',
+        'Anchor terms per module enable precise, context-aware resource filtering',
+        'Hybrid BM25 + semantic similarity scoring with authority bumping for known educators',
+      ],
     },
     {
-      title: '[Feature or Flow Name]',
-      description: '[Explain another important piece of the product.]',
-      highlights: ['[Key interaction]', '[Automation or insight]', '[User value]'],
+      title: 'Adaptive Learning Engine',
+      assetPath: '/project-assets/adapt-roadmap.png',
+      description:
+        'After completing each module, the Performance Evaluator agent analyzes your self-reported difficulty and quiz score. If you struggled (hard + low quiz), it inserts a review module. If you excelled (easy + high quiz), it compresses upcoming modules. The Adapt Plan modal also lets you change your topic, learning goal, or proficiency level mid-roadmap.',
+      highlights: [
+        'Three adaptation triggers: review insertion, supplementary resources, and module compression',
+        'Timeline recalculated from total hours / hours per day — never arbitrary week additions',
+        'Completed modules are always preserved; only upcoming modules are restructured',
+      ],
     },
     {
-      title: '[Feature or Flow Name]',
-      description: '[Explain a third area such as admin tools, analytics, onboarding, or evaluation.]',
-      highlights: ['[What happens]', '[How it is implemented]', '[Why it matters]'],
+      title: 'On-Demand Quizzes and Self-Assessment',
+      assetPath: '/project-assets/module-quiz.png',
+      description:
+        'The Quiz Generator agent creates 3-5 multiple-choice questions per module, calibrated to your skill level and learning goal. Quizzes are not pre-generated during roadmap creation — they are triggered on-demand to save tokens and ensure freshness.',
+      highlights: [
+        'Questions adapt: practical for hands-on goals, theoretical for conceptual goals',
+        'Each question includes an explanation of the correct answer',
+        'Self-report (easy/medium/hard) combines with quiz score to drive adaptation decisions',
+      ],
+    },
+    {
+      title: 'Community, Groups, and Sharing',
+      assetPath: '/project-assets/community-page.png',
+      description:
+        'A full social layer supports LinkedIn-style mutual connections, roadmap sharing, and group-based learning. Educators can create classrooms, managers can create teams, and anyone can start a study group. Group owners see a progress dashboard with per-member analytics.',
+      highlights: [
+        'Three group types: classroom (professor/student), team (manager/member), study group (admin/member)',
+        'Shared roadmaps are cloned to the recipient with independent progress tracking',
+        'Gamification: 10 points per completed module, 25 per roadmap, 5 per accepted share',
+      ],
     },
   ],
 
-  // Architecture walkthrough
   architecture: [
-    { title: 'Input Layer', description: '[What data, files, prompts, or actions enter the system?]' },
-    { title: 'Reasoning Layer', description: '[How does the AI retrieve context, classify, rank, or generate output?]' },
-    { title: 'Decision Layer', description: '[What rules, guardrails, approvals, or workflow logic shape behavior?]' },
-    { title: 'Output Layer', description: '[What does the user receive: a plan, interface state, report, alert, or recommendation?]' },
+    {
+      title: 'Input Layer',
+      description:
+        'User provides topic, skill level (beginner/intermediate/advanced), learning goal (conceptual/hands-on/quick overview/deep mastery), and timeline (hours per day, weeks or total hours). Inputs are sanitized and rate-limited per user.',
+    },
+    {
+      title: 'Curriculum Design (Agent 1 — Gemini 3-Pro)',
+      description:
+        'The Curriculum Architect generates a sequenced module plan using a 4-priority framework: Domain, Goal, Level, Time. It enforces an 85% time budget, calculates optimal module count, and produces anchor terms per module. Resources and quizzes are left as empty arrays — downstream agents populate them on demand to reduce latency.',
+    },
+    {
+      title: 'Resource Curation (Agent 2 — Gemini 2.5 Flash)',
+      description:
+        'Runs asynchronously after roadmap creation. A 10-stage pipeline per module: context extraction, search query generation, Serper API fetch, YouTube API enrichment, anchor gate filtering, authority scoring, AI-driven pedagogical review, span negotiation for multi-part resources, coverage repair (85% rule), and final diversity constraints. Parallel AI scoring runs one agent instance per module simultaneously.',
+    },
+    {
+      title: 'Performance Evaluation and Adaptation (Agent 3 — Gemini 2.5 Flash)',
+      description:
+        'Triggered on module completion. Evaluates self-report + quiz score against adaptation thresholds. Hard + quiz < 60% inserts a review module. Hard + quiz >= 60% adds supplementary resources. Easy + quiz > 90% compresses upcoming modules. Returns a decision with an updated roadmap structure; resources are re-populated via Agent 2.',
+    },
+    {
+      title: 'Quiz and Flashcard Generation (Agent 4 — Gemini 2.5 Flash-Lite)',
+      description:
+        'On-demand assessment agent that generates 3–5 multiple-choice questions per module, calibrated to the learner\'s skill level and learning goal. Questions are not pre-generated — they are created when the learner requests a quiz, saving tokens and ensuring freshness. Each question includes an explanation of the correct answer. Quiz scores feed into the Performance Evaluator to drive adaptation decisions.',
+    },
+    {
+      title: 'Output Layer',
+      description:
+        'User receives a fully structured roadmap with sequenced modules, curated resources, learning objectives, and progress tracking. The dashboard displays completion percentage, streaks, time tracking, and adaptation history. Sharing, groups, and progress dashboards extend the output to collaborative contexts.',
+    },
   ],
 
-  // Optional code snippet area
-  // Keep this short. One or two examples is usually enough.
   codeHighlights: [
     {
-      title: 'Example code snippet',
+      title: 'Performance Evaluator — Adaptation Logic',
       language: 'ts',
-      note: 'Paste one or two small code snippets here if they help explain the build.',
-      code: `export async function runWorkflow(input: string) {
-  const result = await orchestrator.plan(input);
-  return result;
+      note: 'The check-in edge function determines if the roadmap needs restructuring based on self-reported difficulty and quiz performance.',
+      code: `// Determine if adaptation needed based on performance signals
+let needsCheck = false;
+if (self_report === "hard" && (quiz_score === null || quiz_score < 60))
+  needsCheck = true;  // Struggling — insert review module
+else if (self_report === "hard" && quiz_score >= 60)
+  needsCheck = true;  // Passing but difficult — add supplementary resources
+else if (self_report === "easy" && quiz_score !== null && quiz_score > 90)
+  needsCheck = true;  // Excelling — compress upcoming modules
+
+if (!needsCheck) {
+  return { needs_adaptation: false, message_to_student: "Great progress! Keep going." };
+}`,
+    },
+    {
+      title: 'Resource Curator — YouTube Relevance Validation',
+      language: 'ts',
+      note: 'Every YouTube resource is validated against the module context to filter out off-topic content before it reaches the learner.',
+      code: `function isVideoRelevant(
+  title: string, channel: string,
+  moduleTitle: string, topic: string
+): boolean {
+  const combined = \`\${title} \${channel}\`.toLowerCase();
+  const searchContext = \`\${moduleTitle} \${topic}\`.toLowerCase();
+  const topicWords = searchContext.split(/\\s+/).filter(w => w.length > 3);
+  const matchCount = topicWords.filter(w => combined.includes(w)).length;
+  if (matchCount >= 2) return true;
+  const hasTechSignal = TECH_RELEVANCE_KEYWORDS.some(kw => combined.includes(kw));
+  if (hasTechSignal && matchCount >= 1) return true;
+  return matchCount > 0;
 }`,
     },
   ],
 
-  // Roadmap
   roadmap: [
     {
-      phase: 'Now',
-      items: ['[What the prototype does today]', '[What evidence or assets you already have]', '[Any current limitations to be aware of]'],
+      phase: 'Delivered (Now)',
+      items: [
+        'Live platform with full roadmap generation, resource curation, adaptive learning, and on-demand quizzes',
+        'Community layer with mutual connections, roadmap sharing/requesting, and public profiles',
+        'Groups system supporting classrooms, teams, and study groups with owner progress dashboards',
+        'Two-phase async pipeline cutting perceived generation time from 60+ seconds to under 30 seconds',
+        'Adapt plan controls for changing topic, learning goal, and proficiency level mid-roadmap',
+      ],
     },
     {
       phase: 'Next',
-      items: ['[Most important improvement]', '[What you would validate with more time]', '[A feature that meaningfully increases value]'],
+      items: [
+        'Spaced repetition and flashcard system for long-term retention across completed modules',
+        'Resource quality feedback loop — aggregate like/dislike signals to improve future curation',
+        'Mobile-responsive redesign for on-the-go learning',
+        'Onboarding flow for first-time users to reduce time-to-first-roadmap',
+      ],
     },
     {
       phase: 'Later',
-      items: ['[Scale-up opportunity]', '[Partnership, data, or business model opportunity]', '[Longer-term product vision]'],
+      items: [
+        'B2B expansion: enterprise workforce upskilling with team analytics and custom content libraries',
+        'Data moat: aggregated learning behavior data to train proprietary recommendation models',
+        'Certification partnerships with industry providers for verified learning outcomes',
+        'Multi-language support for global learner reach',
+      ],
     },
   ],
 
-  // Risks and constraints
   risks: [
-    { title: '[Risk or Constraint]', mitigation: '[How your team manages or reduces this risk.]' },
-    { title: '[Risk or Constraint]', mitigation: '[How your team manages or reduces this risk.]' },
-    { title: '[Risk or Constraint]', mitigation: '[How your team manages or reduces this risk.]' },
+    {
+      title: 'LLM Output Quality and Reliability',
+      mitigation:
+        'Fallback roadmap generator produces a valid structure if AI fails. Multi-attempt JSON parsing with sanitization handles malformed responses. Per-user rate limiting prevents abuse.',
+    },
+    {
+      title: 'Resource Freshness and Link Rot',
+      mitigation:
+        'Resources are fetched live from Serper and YouTube APIs at generation time rather than cached. YouTube API enrichment validates video availability and metadata. Users can mark resources as "not relevant" to filter them out.',
+    },
+    {
+      title: 'API Cost and Rate Limits',
+      mitigation:
+        'Token optimization: quizzes generated on-demand (not pre-generated), compact payloads strip completed module detail, Flash-Lite used for low-complexity tasks. Per-user rate limits (10 roadmaps, 30 quizzes, 60 check-ins) control spend.',
+    },
+    {
+      title: 'Cold Start for New Users',
+      mitigation:
+        'Quick-start templates on the generation page let users begin with one click. Public profiles and the community page surface popular roadmaps for discovery. Guest mode lowers the sign-up barrier.',
+    },
   ],
 };
