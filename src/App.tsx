@@ -382,12 +382,15 @@ export default function App() {
         </section>
 
         <section className="closing-card">
-          <div>
+          <div className="closing-left">
             <p className="dark-eyebrow">Conclusion</p>
             <h2>A fully-personalized and adaptive learning assistant</h2>
             <p>
               Unlike ChatGPT or Claude, WayVion does not just answer questions — it builds a structured, sequenced learning path with real verified resources, adapts in real time based on your performance, and remembers where you left off. Unlike online learning platforms like Coursera or Udemy, WayVion is not locked to a fixed library or pre-defined syllabus — it covers any topic, budgets time to your schedule, and restructures your roadmap when you struggle.
             </p>
+            <div className="closing-logo-wrap">
+              <img src={`${base}project-assets/wayvion-logo.png`} alt="WayVion logo" className="closing-logo" />
+            </div>
           </div>
 
           <div className="card-grid two-up">
@@ -397,10 +400,9 @@ export default function App() {
               </div>
               <h3>Who benefits?</h3>
               <ul className="closing-list">
-                <li>Self-directed learners who need structure</li>
-                <li>Students preparing for exams or new skills</li>
-                <li>Corporate teams upskilling on demand</li>
-                <li>Educators assigning guided learning paths</li>
+                <li>Self-directed learners</li>
+                <li>Students and educators</li>
+                <li>Corporate teams</li>
               </ul>
             </div>
             <div className="closing-mini-card">
@@ -409,10 +411,9 @@ export default function App() {
               </div>
               <h3>What changes?</h3>
               <ul className="closing-list">
-                <li>No more searching for resources or guessing what to study next</li>
-                <li>Adaptive, time-budgeted roadmaps replace unstructured browsing</li>
-                <li>Quizzes and progress tracking keep learners accountable</li>
-                <li>Reduced time-to-competency across any topic</li>
+                <li>Structured paths replace aimless searching</li>
+                <li>Adaptive, time-budgeted roadmaps</li>
+                <li>Built-in quizzes and progress tracking</li>
               </ul>
             </div>
             <div className="closing-mini-card">
@@ -421,10 +422,9 @@ export default function App() {
               </div>
               <h3>Why this build?</h3>
               <ul className="closing-list">
-                <li>4 specialized AI agents orchestrate curriculum, resources, evaluation, and quizzes</li>
-                <li>10-stage resource pipeline scores content for quality, difficulty, and fit</li>
-                <li>Live web search — not a static library</li>
-                <li>Credible where LLMs hallucinate links and fixed platforms cannot adapt</li>
+                <li>4 AI agents orchestrate the full learning loop</li>
+                <li>10-stage resource curation pipeline</li>
+                <li>Live web search, not a static library</li>
               </ul>
             </div>
             <div className="closing-mini-card">
@@ -433,11 +433,33 @@ export default function App() {
               </div>
               <h3>What is next?</h3>
               <ul className="closing-list">
-                <li>Enterprise workforce upskilling with team analytics</li>
-                <li>University-wide rollouts for professors and classes</li>
-                <li>Certification partnerships for verified outcomes</li>
-                <li>Multi-language support for global reach</li>
+                <li>Enterprise workforce upskilling</li>
+                <li>University-wide rollouts</li>
+                <li>Certification partnerships</li>
               </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="card-grid two-up">
+            <div className="surface gallery-card">
+              <div className="gallery-image-wrap">
+                <img src={`${base}project-assets/creative-product-award.jpg`} alt="WayVion wins Creative Product Award at Gen AI Demo Day" className="gallery-image" />
+              </div>
+              <div className="gallery-body">
+                <h3>Creative Product Award — Gen AI Demo Day</h3>
+                <p>WayVion was awarded the Creative Product Award at the Gen AI Demo Day, recognizing its innovative approach to personalized, AI-driven learning.</p>
+              </div>
+            </div>
+            <div className="surface gallery-card">
+              <div className="gallery-image-wrap">
+                <img src={`${base}project-assets/team-photo.jpg`} alt="WayVion team at Gen AI Demo Day — Professor Leonard B, Nathan Fitzgerald, Swati Choudhury, and Sandrine Lepesqueux" className="gallery-image" />
+              </div>
+              <div className="gallery-body">
+                <h3>The WayVion Team</h3>
+                <p>Left to right: Professor Leonard B, Swati Choudhury, Nathan Fitzgerald, and Sandrine Lepesqueux at Demo Day. Not pictured: Nicholas Ray German — an integral part of the team who contributed to financial strategy and business planning.</p>
+              </div>
             </div>
           </div>
         </section>

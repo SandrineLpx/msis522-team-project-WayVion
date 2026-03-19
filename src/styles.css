@@ -753,6 +753,23 @@ select {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.closing-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.closing-logo-wrap {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.closing-logo {
+  width: 140px;
+  height: auto;
+}
+
 .closing-mini-card p {
   margin: 0.55rem 0 0;
 }
