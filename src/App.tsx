@@ -454,11 +454,11 @@ export default function App() {
             </div>
             <div className="surface gallery-card">
               <div className="gallery-image-wrap">
-                <img src={`${base}project-assets/team-photo.jpg`} alt="WayVion team at Gen AI Demo Day — Professor Leonard B, Nathan Fitzgerald, Swati Choudhury, and Sandrine Lepesqueux" className="gallery-image" />
+                <img src={`${base}project-assets/team-photo.jpg`} alt="WayVion team at Gen AI Demo Day — Nathan Fitzgerald, Swati Choudhury, Professor Leonard Boussioux, and Sandrine Lepesqueux" className="gallery-image" />
               </div>
               <div className="gallery-body">
                 <h3>The WayVion Team</h3>
-                <p>Left to right: Professor Leonard B, Swati Choudhury, Nathan Fitzgerald, and Sandrine Lepesqueux at Demo Day. Not pictured: Nicholas Ray German — an integral part of the team who contributed to financial strategy and business planning.</p>
+                <p>Left to right: Nathan Fitzgerald, Swati Choudhury, Professor Leonard Boussioux, and Sandrine Lepesqueux at Demo Day. Not pictured: Nicholas Ray German — an integral part of the team who contributed to financial strategy and business planning.</p>
               </div>
             </div>
           </div>
