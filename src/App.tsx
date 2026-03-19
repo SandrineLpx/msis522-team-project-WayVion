@@ -16,6 +16,8 @@ import {
 } from 'lucide-react';
 import { projectData } from './data/projectData';
 
+const base = (import.meta as any).env.BASE_URL as string;
+
 function SectionHeader({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return (
     <div className="section-header">
@@ -70,7 +72,7 @@ export default function App() {
               {projectData.links.map((link) => (
                 <a
                   key={`${link.label}-${link.url}`}
-                  href={link.url}
+                  href={link.url.startsWith('/') ? `${base}${link.url.replace(/^\//, '')}` : link.url}
                   className={link.primary ? 'primary-link' : 'secondary-link'}
                   target="_blank"
                   rel="noreferrer"
@@ -83,7 +85,7 @@ export default function App() {
           </div>
           <div className="hero-visual">
             <img
-              src="/project-assets/roadmap-dashboard.png"
+              src={`${base}project-assets/roadmap-dashboard.png`}
               alt="WayVion roadmap dashboard showing module progression, streaks, and adapt controls"
               className="hero-screenshot"
             />
@@ -232,7 +234,7 @@ export default function App() {
               item.assetPath ? (
                 <div key={item.title} className="surface gallery-card">
                   <div className="gallery-image-wrap">
-                    <img src={item.assetPath} alt={item.title} className="gallery-image" />
+                    <img src={`${base}${item.assetPath.replace(/^\//, '')}`} alt={item.title} className="gallery-image" />
                   </div>
                   <div className="gallery-body">
                     <h3>{item.title}</h3>
@@ -307,7 +309,7 @@ export default function App() {
             </div>
             <div className="methods-flowchart">
               <img
-                src="/project-assets/user-workflow-flowchart.png"
+                src={`${base}project-assets/user-workflow-flowchart.png`}
                 alt="User workflow: Create Roadmap, Complete Courses, Provide Feedback, AI Adapts Learning Path"
                 className="methods-flowchart-image"
               />
@@ -326,7 +328,7 @@ export default function App() {
               <div key={feature.title} className="surface padded-card feature-card-with-image">
                 {feature.assetPath && (
                   <div className="feature-image-wrap">
-                    <img src={feature.assetPath} alt={feature.title} className="feature-image" />
+                    <img src={`${base}${feature.assetPath.replace(/^\//, '')}`} alt={feature.title} className="feature-image" />
                   </div>
                 )}
                 <div className="icon-box cyan-box">
@@ -371,7 +373,7 @@ export default function App() {
             </div>
             <div className="methods-flowchart">
               <img
-                src="/project-assets/ai-agents-orchestra.png"
+                src={`${base}project-assets/ai-agents-orchestra.png`}
                 alt="The Orchestra: 4 Specialized AI Agents — Curriculum Architect, Resource Curator, Performance Evaluator, Quiz/Flashcard Gen"
                 className="methods-flowchart-image"
               />
