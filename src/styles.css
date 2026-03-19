@@ -38,7 +38,7 @@ select {
 
 .page-shell {
   min-height: 100vh;
-  padding: 4.5rem 1.5rem 5rem;
+  padding: 7rem 1.5rem 5rem;
 }
 
 .page-container {
@@ -927,7 +927,7 @@ select {
 
 @media (max-width: 720px) {
   .page-shell {
-    padding: 3rem 1rem 4rem;
+    padding: 5.5rem 1rem 4rem;
   }
 
   .hero h1 {
@@ -948,5 +948,273 @@ select {
 
   .card-heading h3 {
     font-size: 1.4rem;
+  }
+}
+
+/* ─── Smooth scrolling ─────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Skip-to-content link ─────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: #020617;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0 0 10px 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 9999;
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ─── Focus visible rings ──────────────────────────────────── */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ─── Sticky navigation ────────────────────────────────────── */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(186, 230, 253, 0.7);
+  box-shadow: 0 2px 16px rgba(8, 47, 73, 0.07);
+}
+
+.sticky-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.65rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-logo {
+  height: 26px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-links a {
+  color: #475569;
+  font-size: 0.83rem;
+  font-weight: 600;
+  padding: 0.4rem 0.65rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(6, 182, 212, 0.1);
+  color: #0e7490;
+}
+
+/* ─── Hover lift on interactive cards ──────────────────────── */
+.padded-card,
+.gallery-card,
+.closing-mini-card,
+.metric-card,
+.instruction-card,
+.dark-card {
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.padded-card:hover,
+.gallery-card:hover,
+.closing-mini-card:hover,
+.metric-card:hover,
+.instruction-card:hover,
+.dark-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 52px rgba(8, 47, 73, 0.13);
+}
+
+/* ─── Button hover effects ─────────────────────────────────── */
+.primary-link {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.primary-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.28);
+}
+
+.secondary-link {
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.secondary-link:hover {
+  transform: translateY(-2px);
+  background: rgba(224, 242, 254, 0.9);
+}
+
+/* ─── Scroll-reveal animation ──────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ─── Iframe loading spinner ───────────────────────────────── */
+.iframe-wrap {
+  position: relative;
+}
+
+.iframe-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  gap: 1rem;
+  min-height: 700px;
+  z-index: 1;
+}
+
+.iframe-loader-text {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.iframe-spinner {
+  width: 38px;
+  height: 38px;
+  border: 3px solid rgba(6, 182, 212, 0.2);
+  border-top-color: #06b6d4;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Clickable image (gallery + features) ─────────────────── */
+.clickable-image {
+  cursor: zoom-in;
+}
+
+.clickable-image .gallery-image,
+.clickable-image .feature-image {
+  transition: transform 0.3s ease;
+}
+
+.clickable-image:hover .gallery-image,
+.clickable-image:hover .feature-image {
+  transform: scale(1.03);
+}
+
+/* ─── Lightbox overlay ─────────────────────────────────────── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.88);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  cursor: zoom-out;
+  animation: fadeIn 0.18s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-image {
+  max-width: min(90vw, 1100px);
+  max-height: 85vh;
+  border-radius: 16px;
+  box-shadow: 0 48px 100px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  color: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+@media (max-width: 720px) {
+  .sticky-nav-inner {
+    padding: 0.6rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .nav-logo {
+    height: 22px;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.5rem;
   }
 }
