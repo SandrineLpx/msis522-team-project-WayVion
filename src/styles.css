@@ -542,14 +542,12 @@ select {
 }
 
 .gallery-image-wrap {
-  aspect-ratio: 16 / 10;
   overflow: hidden;
 }
 
 .gallery-image {
-  height: 100%;
-  object-fit: cover;
   width: 100%;
+  display: block;
 }
 
 .gallery-placeholder {
