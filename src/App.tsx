@@ -1,8 +1,6 @@
 import {
-  BarChart3,
   Brain,
   CheckCircle2,
-  Code2,
   FileText,
   ImageIcon,
   Layers3,
@@ -11,7 +9,6 @@ import {
   Link as LinkIcon,
   Network,
   Rocket,
-  ShieldCheck,
   Sparkles,
   Target,
   Users,
