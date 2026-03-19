@@ -396,28 +396,48 @@ export default function App() {
                 <Users size={18} />
               </div>
               <h3>Who benefits?</h3>
-              <p>Self-directed learners who need structure, students preparing for exams or new skills, corporate teams upskilling on demand, and educators who want to assign guided learning paths to their classes.</p>
+              <ul className="closing-list">
+                <li>Self-directed learners who need structure</li>
+                <li>Students preparing for exams or new skills</li>
+                <li>Corporate teams upskilling on demand</li>
+                <li>Educators assigning guided learning paths</li>
+              </ul>
             </div>
             <div className="closing-mini-card">
               <div className="icon-box dark-icon-box">
                 <Target size={18} />
               </div>
               <h3>What changes?</h3>
-              <p>Learners stop wasting time searching for resources and guessing what to study next. WayVion replaces unstructured browsing with an adaptive, time-budgeted roadmap — reducing time-to-competency and keeping learners accountable with quizzes and progress tracking.</p>
+              <ul className="closing-list">
+                <li>No more searching for resources or guessing what to study next</li>
+                <li>Adaptive, time-budgeted roadmaps replace unstructured browsing</li>
+                <li>Quizzes and progress tracking keep learners accountable</li>
+                <li>Reduced time-to-competency across any topic</li>
+              </ul>
             </div>
             <div className="closing-mini-card">
               <div className="icon-box dark-icon-box">
                 <Layers3 size={18} />
               </div>
               <h3>Why this build?</h3>
-              <p>Four specialized AI agents — Curriculum Architect, Resource Curator, Performance Evaluator, and Quiz Generator — work together through a multi-agent orchestration layer. The 10-stage resource curation pipeline scores content for quality, difficulty, and fit using live search, not a static library. This architecture makes WayVion credible where generic LLMs hallucinate links and fixed platforms cannot adapt.</p>
+              <ul className="closing-list">
+                <li>4 specialized AI agents orchestrate curriculum, resources, evaluation, and quizzes</li>
+                <li>10-stage resource pipeline scores content for quality, difficulty, and fit</li>
+                <li>Live web search — not a static library</li>
+                <li>Credible where LLMs hallucinate links and fixed platforms cannot adapt</li>
+              </ul>
             </div>
             <div className="closing-mini-card">
               <div className="icon-box dark-icon-box">
                 <Rocket size={18} />
               </div>
               <h3>What is next?</h3>
-              <p>Enterprise workforce upskilling with team analytics and custom content libraries. University-wide rollouts where professors assign AI-generated roadmaps to entire classes. Certification partnerships for verified learning outcomes, and multi-language support for global reach.</p>
+              <ul className="closing-list">
+                <li>Enterprise workforce upskilling with team analytics</li>
+                <li>University-wide rollouts for professors and classes</li>
+                <li>Certification partnerships for verified outcomes</li>
+                <li>Multi-language support for global reach</li>
+              </ul>
             </div>
           </div>
         </section>

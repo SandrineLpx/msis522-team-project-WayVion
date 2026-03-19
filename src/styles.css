@@ -757,6 +757,19 @@ select {
   margin: 0.55rem 0 0;
 }
 
+.closing-list {
+  margin: 0.55rem 0 0;
+  padding-left: 1.2rem;
+  list-style: disc;
+  color: #cbd5e1;
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+
+.closing-list li {
+  margin-bottom: 0.25rem;
+}
+
 /* Methods flowchart */
 .methods-flowchart {
   margin-top: 1.5rem;
