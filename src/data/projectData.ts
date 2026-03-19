@@ -67,7 +67,7 @@ export interface ProjectPageData {
   instructions: string[];
   links: ProjectLink[];
   badges: string[];
-  methods: string[];
+  methods: { name: string; note: string }[];
   metrics: ProjectMetric[];
   problemStatement: string;
   solutionSummary: string;
@@ -114,11 +114,12 @@ export const projectData: ProjectPageData = {
   keywords: ['adaptive-learning', 'ai-agents', 'personalized-education', 'multi-agent-orchestration', 'edtech'],
 
   methods: [
-    'Multi-agent orchestration',
-    'Two-phase async generation',
-    '10-stage resource curation pipeline',
-    'Performance-driven adaptation',
-    'On-demand quiz generation',
+    { name: 'Multi-agent orchestration', note: 'Four specialized AI agents coordinate curriculum design, resource curation, performance evaluation, and quiz generation.' },
+    { name: 'Two-phase async generation', note: 'Roadmap structure is returned instantly; resources are populated asynchronously to cut perceived wait time.' },
+    { name: '10-stage resource curation pipeline', note: 'Real resources scored for quality, difficulty, and fit through search, filtering, AI review, and diversity constraints.' },
+    { name: 'Performance-driven adaptation', note: 'Self-reported difficulty and quiz scores trigger automatic roadmap restructuring — review, supplement, or compress.' },
+    { name: 'On-demand quiz generation', note: 'Quizzes are generated per module on request, calibrated to skill level and learning goal, saving tokens and ensuring freshness.' },
+    { name: 'On-demand flashcards', note: 'Flashcards are generated on demand for each module to support spaced repetition and long-term retention.' },
   ],
 
   metrics: [
@@ -152,29 +153,9 @@ export const projectData: ProjectPageData = {
       assetPath: '/project-assets/generate-roadmap.png',
     },
     {
-      title: 'Performance Check-In',
-      caption: 'After completing a module, the AI analyzes self-reported difficulty and quiz scores to determine if the roadmap needs adaptation.',
-      assetPath: '/project-assets/checkin-agent.png',
-    },
-    {
-      title: 'Module Detail View',
-      caption: 'Each module displays curated resources, learning objectives, and progress tracking for structured learning.',
-      assetPath: '/project-assets/module-detail.png',
-    },
-    {
       title: 'Roadmap Dashboard',
       caption: 'A full roadmap view showing module sequence, progress stats, time tracking, and actions like Adapt Plan, Share, and Archive.',
       assetPath: '/project-assets/ai-roadmap-full.png',
-    },
-    {
-      title: 'Landing Page Features',
-      caption: 'How WayVion builds your learning path — showcasing the agent workflow and key value propositions like tailored goals, proficiency levels, and timeline customization.',
-      assetPath: '/project-assets/landing-page-features.png',
-    },
-    {
-      title: 'Module Self-Report',
-      caption: 'After completing a module, learners rate difficulty (Easy, Medium, Hard), write notes, and generate a quiz — feeding the adaptive learning engine.',
-      assetPath: '/project-assets/module-self-report.png',
     },
     {
       title: 'My Roadmaps',
@@ -182,14 +163,29 @@ export const projectData: ProjectPageData = {
       assetPath: '/project-assets/my-roadmaps.png',
     },
     {
-      title: 'Parallel Agent Scoring',
-      caption: 'The Resource Curator runs parallel AI scoring instances — one per module — before collecting results for span negotiation and coverage repair.',
-      assetPath: '/project-assets/parallel-agents-flowchart.png',
+      title: 'Performance Check-In',
+      caption: 'After completing a module, the AI analyzes self-reported difficulty and quiz scores to determine if the roadmap needs adaptation.',
+      assetPath: '/project-assets/checkin-agent.png',
+    },
+    {
+      title: 'Module Self-Report',
+      caption: 'After completing a module, learners rate difficulty (Easy, Medium, Hard), write notes, and generate a quiz — feeding the adaptive learning engine.',
+      assetPath: '/project-assets/module-self-report.png',
+    },
+    {
+      title: 'Landing Page Features',
+      caption: 'How WayVion builds your learning path — showcasing the agent workflow and key value propositions like tailored goals, proficiency levels, and timeline customization.',
+      assetPath: '/project-assets/landing-page-features.png',
     },
     {
       title: '10-Stage Resource Pipeline',
       caption: 'The full resource curation pipeline: from context extraction and search query generation through Serper/YouTube APIs, authority scoring, AI review, and final diversity constraints.',
       assetPath: '/project-assets/resource-pipeline-flowchart.png',
+    },
+    {
+      title: 'Parallel Agent Scoring',
+      caption: 'The Resource Curator runs parallel AI scoring instances — one per module — before collecting results for span negotiation and coverage repair.',
+      assetPath: '/project-assets/parallel-agents-flowchart.png',
     },
   ],
 

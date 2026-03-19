@@ -143,37 +143,6 @@ export default function App() {
           </div>
         </section>
 
-        <section className="surface instructions-surface">
-          <div className="instruction-heading">
-            <div className="icon-box cyan-box">
-              <FileText size={22} />
-            </div>
-            <div>
-              <p className="instruction-title">How to use WayVion</p>
-              <p className="instruction-subtitle">Generate a personalized learning roadmap in four steps.</p>
-            </div>
-          </div>
-
-          <div className="instruction-list">
-            {projectData.instructions.map((instruction) => (
-              <div key={instruction} className="instruction-card">
-                <CheckCircle2 size={20} />
-                <p>{instruction}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="metrics-grid">
-            {projectData.metrics.map((metric) => (
-              <div key={metric.label} className="metric-card">
-                <p className="metric-label">{metric.label}</p>
-                <p className="metric-value">{metric.value}</p>
-                <p className="metric-note">{metric.note}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <section className="two-col-grid">
           <div className="surface padded-card">
             <div className="card-heading">
@@ -215,41 +184,74 @@ export default function App() {
             <p className="dark-copy">{projectData.solutionSummary}</p>
             <div className="method-row">
               {projectData.methods.map((method) => (
-                <span key={method} className="dark-chip">
-                  {method}
+                <span key={method.name} className="dark-chip">
+                  {method.name}
                 </span>
               ))}
             </div>
           </div>
         </section>
 
+        <section className="surface instructions-surface">
+          <div className="instruction-heading">
+            <div className="icon-box cyan-box">
+              <FileText size={22} />
+            </div>
+            <div>
+              <p className="instruction-title">How to use WayVion</p>
+              <p className="instruction-subtitle">Generate a personalized learning roadmap in four steps.</p>
+            </div>
+          </div>
+
+          <div className="instruction-list">
+            {projectData.instructions.map((instruction) => (
+              <div key={instruction} className="instruction-card">
+                <CheckCircle2 size={20} />
+                <p>{instruction}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="metrics-grid">
+            {projectData.metrics.map((metric) => (
+              <div key={metric.label} className="metric-card">
+                <p className="metric-label">{metric.label}</p>
+                <p className="metric-value">{metric.value}</p>
+                <p className="metric-note">{metric.note}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section>
           <SectionHeader
-            eyebrow="Gallery"
-            title="Snapshots from WayVion Roadmap Creation, Adaptation and Usage"
+            eyebrow="Product"
+            title="WayVion's Features Highlight"
             description=""
           />
           <div className="card-grid two-up">
-            {projectData.gallery.map((item) =>
-              item.assetPath ? (
-                <div key={item.title} className="surface gallery-card">
-                  <div className="gallery-image-wrap">
-                    <img src={`${base}${item.assetPath.replace(/^\//, '')}`} alt={item.title} className="gallery-image" />
+            {projectData.features.map((feature) => (
+              <div key={feature.title} className="surface padded-card feature-card-with-image">
+                {feature.assetPath && (
+                  <div className="feature-image-wrap">
+                    <img src={`${base}${feature.assetPath.replace(/^\//, '')}`} alt={feature.title} className="feature-image" />
                   </div>
-                  <div className="gallery-body">
-                    <h3>{item.title}</h3>
-                    <p>{item.caption}</p>
-                  </div>
+                )}
+                <div className="icon-box cyan-box">
+                  <Rocket size={18} />
                 </div>
-              ) : (
-                <PlaceholderGalleryCard
-                  key={item.title}
-                  title={item.title}
-                  caption={item.caption}
-                  placeholder={item.placeholder ?? 'Add a visual asset here'}
-                />
-              ),
-            )}
+                <h3>{feature.title}</h3>
+                <p className="body-copy compact">{feature.description}</p>
+                <div className="check-list">
+                  {feature.highlights.map((highlight) => (
+                    <div key={highlight} className="check-item">
+                      <CheckCircle2 size={16} />
+                      <p>{highlight}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -261,7 +263,7 @@ export default function App() {
               </div>
               <div>
                 <p className="eyebrow">Stack</p>
-                <h3>Make the stack easy to scan</h3>
+                <h3>Full Stack App</h3>
               </div>
             </div>
             <div className="stack-list">
@@ -291,18 +293,18 @@ export default function App() {
               </div>
               <div>
                 <p className="eyebrow">Methods</p>
-                <h3>Call out the techniques quickly</h3>
+                <h3>WayVion's Techniques</h3>
               </div>
             </div>
             <div className="method-grid">
               {projectData.methods.map((method) => (
-                <div key={method} className="method-card">
+                <div key={method.name} className="method-card">
                   <div className="method-icon">
                     <Sparkles size={14} />
                   </div>
                   <div>
-                    <p className="method-title">{method}</p>
-                    <p className="method-note">Explain how this method improved speed, quality, or reliability.</p>
+                    <p className="method-title">{method.name}</p>
+                    <p className="method-note">{method.note}</p>
                   </div>
                 </div>
               ))}
@@ -314,38 +316,6 @@ export default function App() {
                 className="methods-flowchart-image"
               />
             </div>
-          </div>
-        </section>
-
-        <section>
-          <SectionHeader
-            eyebrow="Product"
-            title="Break the experience into feature cards"
-            description=""
-          />
-          <div className="card-grid two-up">
-            {projectData.features.map((feature) => (
-              <div key={feature.title} className="surface padded-card feature-card-with-image">
-                {feature.assetPath && (
-                  <div className="feature-image-wrap">
-                    <img src={`${base}${feature.assetPath.replace(/^\//, '')}`} alt={feature.title} className="feature-image" />
-                  </div>
-                )}
-                <div className="icon-box cyan-box">
-                  <Rocket size={18} />
-                </div>
-                <h3>{feature.title}</h3>
-                <p className="body-copy compact">{feature.description}</p>
-                <div className="check-list">
-                  {feature.highlights.map((highlight) => (
-                    <div key={highlight} className="check-item">
-                      <CheckCircle2 size={16} />
-                      <p>{highlight}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 
@@ -378,6 +348,36 @@ export default function App() {
                 className="methods-flowchart-image"
               />
             </div>
+          </div>
+        </section>
+
+        <section>
+          <SectionHeader
+            eyebrow="Gallery"
+            title="Snapshots from WayVion Roadmap Creation, Adaptation and Usage"
+            description=""
+          />
+          <div className="card-grid two-up">
+            {projectData.gallery.map((item) =>
+              item.assetPath ? (
+                <div key={item.title} className="surface gallery-card">
+                  <div className="gallery-image-wrap">
+                    <img src={`${base}${item.assetPath.replace(/^\//, '')}`} alt={item.title} className="gallery-image" />
+                  </div>
+                  <div className="gallery-body">
+                    <h3>{item.title}</h3>
+                    <p>{item.caption}</p>
+                  </div>
+                </div>
+              ) : (
+                <PlaceholderGalleryCard
+                  key={item.title}
+                  title={item.title}
+                  caption={item.caption}
+                  placeholder={item.placeholder ?? 'Add a visual asset here'}
+                />
+              ),
+            )}
           </div>
         </section>
 
