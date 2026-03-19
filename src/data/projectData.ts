@@ -182,11 +182,6 @@ export const projectData: ProjectPageData = {
       caption: 'The full resource curation pipeline: from context extraction and search query generation through Serper/YouTube APIs, authority scoring, AI review, and final diversity constraints.',
       assetPath: '/project-assets/resource-pipeline-flowchart.png',
     },
-    {
-      title: 'Parallel Agent Scoring',
-      caption: 'The Resource Curator runs parallel AI scoring instances — one per module — before collecting results for span negotiation and coverage repair.',
-      assetPath: '/project-assets/parallel-agents-flowchart.png',
-    },
   ],
 
   stack: [

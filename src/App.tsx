@@ -383,11 +383,10 @@ export default function App() {
 
         <section className="closing-card">
           <div>
-            <p className="dark-eyebrow">Closing Section</p>
-            <h2>End with a clear business case</h2>
+            <p className="dark-eyebrow">Conclusion</p>
+            <h2>A fully-personalized and adaptive learning assistant</h2>
             <p>
-              The strongest project pages do not stop at “here is our interface.” They explain why the idea matters,
-              how the system is built, what evidence exists today, and what should happen next.
+              Unlike ChatGPT or Claude, WayVion does not just answer questions — it builds a structured, sequenced learning path with real verified resources, adapts in real time based on your performance, and remembers where you left off. Unlike online learning platforms like Coursera or Udemy, WayVion is not locked to a fixed library or pre-defined syllabus — it covers any topic, budgets time to your schedule, and restructures your roadmap when you struggle.
             </p>
           </div>
 
@@ -397,28 +396,28 @@ export default function App() {
                 <Users size={18} />
               </div>
               <h3>Who benefits?</h3>
-              <p>State the user, customer, or stakeholder group in plain language.</p>
+              <p>Self-directed learners who need structure, students preparing for exams or new skills, corporate teams upskilling on demand, and educators who want to assign guided learning paths to their classes.</p>
             </div>
             <div className="closing-mini-card">
               <div className="icon-box dark-icon-box">
                 <Target size={18} />
               </div>
               <h3>What changes?</h3>
-              <p>Explain the operational, financial, or human outcome the project improves.</p>
+              <p>Learners stop wasting time searching for resources and guessing what to study next. WayVion replaces unstructured browsing with an adaptive, time-budgeted roadmap — reducing time-to-competency and keeping learners accountable with quizzes and progress tracking.</p>
             </div>
             <div className="closing-mini-card">
               <div className="icon-box dark-icon-box">
                 <Layers3 size={18} />
               </div>
               <h3>Why this build?</h3>
-              <p>Call out the architecture or approach choices that make the solution credible.</p>
+              <p>Four specialized AI agents — Curriculum Architect, Resource Curator, Performance Evaluator, and Quiz Generator — work together through a multi-agent orchestration layer. The 10-stage resource curation pipeline scores content for quality, difficulty, and fit using live search, not a static library. This architecture makes WayVion credible where generic LLMs hallucinate links and fixed platforms cannot adapt.</p>
             </div>
             <div className="closing-mini-card">
               <div className="icon-box dark-icon-box">
                 <Rocket size={18} />
               </div>
               <h3>What is next?</h3>
-              <p>Name the next test, launch step, or milestone that turns the prototype into a stronger product.</p>
+              <p>Enterprise workforce upskilling with team analytics and custom content libraries. University-wide rollouts where professors assign AI-generated roadmaps to entire classes. Certification partnerships for verified learning outcomes, and multi-language support for global reach.</p>
             </div>
           </div>
         </section>
