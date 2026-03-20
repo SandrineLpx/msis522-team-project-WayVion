@@ -107,7 +107,7 @@ export const projectData: ProjectPageData = {
     { label: 'GitHub Repo', url: 'https://github.com/swatt145-png/pathfinder-ai-roadmap' },
     { label: 'Slides PDF', url: '/project-assets/final-slides.pdf' },
     { label: 'PR FAQ', url: '/project-assets/PR-FAQ.html' },
-    { label: 'Technical Report', url: '/project-assets/report.docx' },
+    { label: 'Technical Report', url: '/project-assets/WayVion_Final_Report.pdf' },
   ],
 
   badges: ['React', 'TypeScript', 'Supabase', 'Gemini API', 'Serper API', 'YouTube Data API', 'Tailwind CSS', 'Vite', 'Deno Edge Functions'],
